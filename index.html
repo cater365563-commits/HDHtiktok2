@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chọn Hệ Điều Hành</title>
+    <style>
+        /* Thiết lập nền Gradient động và căn giữa toàn bộ nội dung */
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            overflow: hidden;
+        }
+
+        /* Khung chứa bo góc với hiệu ứng mờ kính (Glassmorphism) */
+        .container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            padding: 40px;
+            border-radius: 20px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            max-width: 400px;
+            width: 90%;
+            animation: fadeIn 1s ease-in-out;
+        }
+
+        /* Hiệu ứng xuất hiện mượt mà khi tải trang */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        h2 {
+            color: #ffffff;
+            margin-bottom: 30px;
+            font-size: 24px;
+            font-weight: 600;
+            text-shadow: 0 2px 4px rgba(0,0,0,0.2);
+        }
+
+        /* Nút bấm chung */
+        .btn {
+            display: block;
+            width: 100%;
+            padding: 15px;
+            margin: 15px 0;
+            border: none;
+            border-radius: 50px;
+            font-size: 18px;
+            font-weight: bold;
+            color: white;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        /* Thiết kế nút iOS với hiệu ứng chuyển màu kim loại sáng */
+        .btn-ios {
+            background: linear-gradient(45deg, #555555, #222222);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .btn-ios:hover {
+            background: linear-gradient(45deg, #777777, #333333);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+
+        /* Thiết kế nút Android với gam màu xanh công nghệ đầy sức sống */
+        .btn-android {
+            background: linear-gradient(45deg, #a4c639, #32de84);
+        }
+
+        .btn-android:hover {
+            background: linear-gradient(45deg, #b5d74a, #43ef95);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(50, 222, 132, 0.4);
+        }
+
+        /* Hiệu ứng khi nhấn nút bấm */
+        .btn:active {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h2>Bạn đang sử dụng hệ điều hành nào?</h2>
+        
+        <button class="btn btn-ios" onclick="goToWeb('ios')">iOS</button>
+        
+        <button class="btn btn-android" onclick="goToWeb('android')">Android</button>
+    </div>
+
+    <script>
+        function goToWeb(os) {
+            // Cấu hình các đường dẫn trang web tại đây
+            var webA = "https://apps.apple.com/vn/app/dysmantle/id1403725446"; // Thay bằng link trang web A dành cho iOS
+            var webB = "https://play.google.com/store/apps/details?id=com.the10tons.dysmantle"; // Thay bằng link trang web B dành cho Android
+
+            if (os === 'ios') {
+                window.location.href = webA;
+            } else if (os === 'android') {
+                window.location.href = webB;
+            }
+        }
+    </script>
+
+</body>
+</html>
